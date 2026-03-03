@@ -337,7 +337,9 @@ export default function AdminPage() {
               }}
             >
               <span>API Backend</span>
-              <span style={{ color: "#10b981" }}>http://localhost:8080</span>
+              <span style={{ color: "#10b981" }}>
+                {process.env.NEXT_PUBLIC_BACKEND_URL || "Non configuré"}
+              </span>
             </div>
             <div
               style={{
@@ -348,7 +350,7 @@ export default function AdminPage() {
             >
               <span>Swagger UI</span>
               <a
-                href="http://localhost:8080/swagger/index.html"
+                href={`${process.env.NEXT_PUBLIC_BACKEND_URL}/swagger/index.html`}
                 target="_blank"
                 rel="noopener"
                 style={{ color: "#3b82f6" }}
